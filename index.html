@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website - Nima Badri</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/b660154cf5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Software Developer</p>
+            <h1>Hi, I'm <span>Nima Badri</span> </h1>
+        </div>
+    </div>
+</div>
+
+<!----------About-------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user1.jpg " alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class= "sub-title">About Me</h1>
+                <h1 class= "body-title">Hello my name is Nima Badri! <br> </br><br> I have obtained a Bachelor's degree in Computer Science at the University of South Alabama, where I have learned computer programming, software engineering, and web development skills. I have applied these skills to create and maintain responsive websites using HTML, CSS, JavaScript, and C# as a Web Developer Intern at TechShack, a local IT company. </br>
+
+                    <br>Currently, I work as an Information Technology Technical Consultant at Geek Squad, where I provide hardware and software repair, tech support, and sales assistance to customers. I use my knowledge of Windows and Mac systems, virus and malware removal, and optimization of storage and processors to deliver excellent solutions. I also completed a Certified Apple Advisor program at Best Buy, where I gained expertise in troubleshooting and problem-solving Apple devices and products. I am passionate about technology and customer service, and I enjoy working with diverse teams and clients. I am eager to apply my skills and expertise to help your organization achieve its goals. </br></h1>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links"onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Development</span><br>Web App Development</li>
+                        <li><span>App Development</span><br>Building Android/IOS Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>January 2023 - Current</span><br>Geek Squad Information Technology Consultant</li>
+                        <li><span>September 2020 - January 2023</span><br>Best Buy Computer Sales Advisor</li>
+                        <li><span>June 2022 - December 2022</span><br>Tech Shack Web Developer Internship</li>
+                        <li><span>October 2021 - June 2022</span><br>Probate Court IT Internship</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span> December 2023</span><br> Bachelor Degree in Computer Science at University of South Alabama</li>
+                        <li><span>Relevant Course Work:</span><br>CSC 440- Secure Software Engineering </br><br>CSC 331- Software Engineering </br><br>CSC 485- Cyber Physical Security </br><br>CIS 324- Database Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------services---------->
+<div id="services">
+    <div class="container">
+        <h1 class= "sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Created my own portfolio website and Interned as a Web Developer at Tech Shack</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Information Technology</h2>
+                <p>Repair Hardware</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-people-arrows"></i>
+                <h2>Customer Service</h2>
+                <p>Assisted in creating a website and different elements within it</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------Portfolio---------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class= "sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.jpg">
+                <div class="layer">
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.jpg">
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+            </div>
+            <div class="work">
+                <img src="images/work-4.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+</body>
+</html>
