@@ -13,13 +13,15 @@
     <div class="container">
         <nav>
             <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
             <p>Software Developer</p>
@@ -48,14 +50,17 @@
                 </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
+                        <li><span>Coding Languages</span><br>HTML, CSS, Python, SQL Server, C#, Java, and JavaScript</li>
                         <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
                         <li><span>Web Development</span><br>Web App Development</li>
-                        <li><span>App Development</span><br>Building Android/IOS Apps</li>
+                        <li><span>Customer Service</span><br>Four Years Of Cusomter Service at Best Buy</li>
+                        <li><span>Microsoft Office Certificaion</span><br>Certified Using Microsft Office Products</li>
+                        <li><span>Adobe Certificaion</span><br>Certified Using Adobe Suite</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>January 2023 - Current</span><br>Geek Squad Information Technology Consultant</li>
+                        <li><span>January 2023 - Current</span><br>Geek Squad Advanced Repair Agent</li>
                         <li><span>September 2020 - January 2023</span><br>Best Buy Computer Sales Advisor</li>
                         <li><span>June 2022 - December 2022</span><br>Tech Shack Web Developer Internship</li>
                         <li><span>October 2021 - June 2022</span><br>Probate Court IT Internship</li>
@@ -86,13 +91,13 @@
             <div>
                 <i class="fa-solid fa-desktop"></i>
                 <h2>Information Technology</h2>
-                <p>Repair Hardware</p>
+                <p>Proven ability to troubleshoot, implement upgrades, and enhance system functionality for seamless technology experiences.</p>
                 <a href="#">Learn More</a>
             </div>
             <div>
                 <i class="fa-solid fa-people-arrows"></i>
                 <h2>Customer Service</h2>
-                <p>Assisted in creating a website and different elements within it</p>
+                <p>Customer service enthusiast with a proven ability to deliver exceptional experiences. Committed to providing prompt, friendly, and effective support to ensure customer satisfaction.</p>
                 <a href="#">Learn More</a>
             </div>
         </div>
@@ -144,6 +149,38 @@
         <a href="#"class="btn">See More</a>
     </div>
 </div>
+<!-- ------------------Contact----------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i> nsb1921@jagmail.southalabama.edu</p>
+                <p><i class="fa-solid fa-phone"></i> (251)463-9243</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/nsbadri/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/MassCreator"><i class="fa-brands fa-square-github"></i></i></a>
+                </div>
+                <a href="images/Nima_Resume.pdf" Download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Nima.<i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+
+
 
 <script>
 
@@ -163,5 +200,34 @@
 
 </script>
 
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxknzaH4SbvUbpXJpydRSI-kyjhuK8FUH8fJZzIQY_6TQz5deBRx52FgynBTvQzz5ye/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
